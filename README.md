@@ -1,40 +1,201 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio Front-end - MKS Sistemas
 
-## Getting Started
+O objetivo principal desse teste é avaliar minha capacidade de escrever código limpo, bem testado e reutilizável.
 
-First, run the development server:
+## Table of contents
+
+- [Overview](#overview)
+  - [Links](#links)
+  - [Getting started](#getting-started)
+- [My process](#my-process)
+  - [Decisions](#decisions)
+  - [Organization](#organization)
+  - [Built with](#built-with)
+  - [Continued Development](#continued-development)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
+## Overview
+
+O desafio consiste em esenvolver o front-end da solução proposta, Para esse desafio, consumi uma API REST de produtos para exibir a lista de produtos da loja.
+
+A aplicação contem apenas uma página/rota e um carrinho.
+
+1. Loja: A lista de produtos deve ser buscada de nossa API, use um shimmer/skeleton enquanto estiver em loading.
+
+2. Carrinho: O carrinho deve conter todos os produtos selecionados, juntamente com a opção de aumentar a quantidade de cada produto selecionado.
+
+3. Use do Jest e a testing-library para realizar os testes unitários.
+
+
+#### Funcionalidades
+
+- [x] Carrinho com todas funcionalidades de um ambiente real.
+- [x] Skeleton para carregamento de dados da api.
+- [x] Feedback ao usuário em caso de sucesso ou erro.
+- [x] Testes unitários.
+- [x] Responsividade do layout.
+
+### Links
+
+- [Remote repository](https://github.com/trelcray/shopping-cart)
+
+- [Live preview](https://shopping-cart-trelcray.vercel.app)
+
+### Getting started
+
+Você pode utilizar a aplicação disponível na URL de _live preview_ acima. Porém,
+caso queira construí-la em sua máquina:
+
+#### Prerequisites
+
+Certifique-se de que sua máquina possui Node 18+ instalado e o gerenciador de
+pacotes `npm`.
+
+Certifique-se de ter instalado a extensão do ESlint.
+
+#### Installation
+
+Clone o repositório do projeto para sua máquina.
+
+Using HTTPS:
+
+```bash
+https://github.com/trelcray/advice-health.git
+```
+
+Using GitHub CLI:
+
+```bash
+gh repo clone trelcray/advice-health
+```
+
+Navegue para o diretório recém-baixado:
+
+```bash
+cd advice-health
+```
+
+Instale as dependências do projeto utilizando `npm`:
+
+```bash
+npm install
+```
+
+#### Development
+
+Para executar o projeto em modo de desenvolvimento, execute o comando:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Isso irá iniciar o servidor de desenvolvimento no endereço
+`http://localhost:3000`. Abra seu navegador e cole o endereço para visualizar a
+aplicação.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Para executar os teste em ambiente de desenvolvimento.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+npm run test
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+ou
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run test:watch
+```
 
-## Learn More
+#### Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+Para construir o projeto para produção, execute o comando:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Isso irá gerar uma versão otimizada e minificada da aplicação na pasta `.next`.
 
-## Deploy on Vercel
+#### Running in Production Mode
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Após a construção do projeto, você pode iniciar um servidor em modo de produção
+executando o comando:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm run start
+```
+
+Isso irá iniciar o servidor de produção no mesmo endereço
+`http://localhost:3000`. Abra seu navegador e cole o endereço para visualizar a
+aplicação otimizada.
+
+## My process
+
+### Decisions
+
+Primeiramente, analisei o escopo do projeto e seus requisitos. Após cuidadosa avaliação, decidi quais tecnologias utilizar e criei a configuração inicial do projeto, incorporando tudo o que havia planejado utilizar.
+
+Em seguida, comecei a desenvolver os componentes e a parte estática da
+aplicação. Posteriormente, implementei algumas funcionalidades necessárias e consumi a api. Após concluir essa etapa, criei os testes unitários e realizei o deploy da aplicação na vercel.
+
+### Organization
+
+O Next.js é um framework que possui um padrão de organização de pastas próprio,
+o qual passou por uma importante alteração na versão 13.4. No meu projeto, sigo fielmente esses padrões e utilizo a pasta "src" para conter os arquivos específicos do projeto. Além disso, opto por separar as pastas de acordo com as responsabilidades dos componentes. Qualquer recurso que não faça parte do projeto é colocado na raiz do projeto, exceto a pasta "public".
+
+### Built with
+
+#### Technologies, libraries and tools
+
+- React.js
+- Next.js
+- TypeScript
+- Styled-Components
+- Material UI
+- Jest
+- Testing-Library
+- Husky
+- Prettier
+- ESlint
+- Lint-staged
+- commitlint
+- Redux Toolkit
+- Tanstack React-Query
+- Axios
+
+#### Techniques, concepts and more
+
+- Mobile-first workflow
+- Semantic HTML5 markup
+- Flexbox / Grid
+- Hosted on Vercel
+
+### Continued development
+
+1. SEO 100%.
+
+2. Aprimorar as Telas de carregamento, Erros...
+
+3. testes de integração e E2E.
+
+### What I learned
+
+1. Que é possível utilizar styled-components no lado do servidor.
+
+
+
+### Useful resources
+
+1. [Readme Preview](https://markdownlivepreview.com/)
+
+## Author
+
+- GitHub - [trelcray](https://github.com/trelcray)
+
+- LinkedIn - [Thalis Zambarda](https://www.linkedin.com/in/thalis-zambarda/)
+
+## Acknowledgments
+
+Agradeço a [MKS Sistemas](https://mkssistemas.com/) pela oportunidade de demonstrar minhas habilidades na prática. Estou entusiasmado em poder mostrar o que sou capaz de fazer e espero que essa experiência possa contribuir para o processo de seleção.
