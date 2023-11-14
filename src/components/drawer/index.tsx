@@ -18,15 +18,6 @@ export function Drawer() {
 
   const dispatch = useAppDispatch();
 
-  const handlePurchase = () => {
-    dispatch(finalizePurchase());
-    setIsToastOpen(true);
-    setTimeout(() => {
-      setIsToastOpen(false);
-    }, 3000);
-    setIsOpen(false);
-  };
-
   const { products } = useAppSelector((state) => state.data);
   const total = products.reduce(
     (acc, cur) => acc + cur.price * cur.quantity,
@@ -34,6 +25,17 @@ export function Drawer() {
   );
 
   const quantity = products.reduce((acc, cur) => acc + cur.quantity, 0);
+
+  const handlePurchase = () => {
+    if (products.length > 0) {
+      dispatch(finalizePurchase());
+      setIsToastOpen(true);
+      setTimeout(() => {
+        setIsToastOpen(false);
+      }, 3000);
+      setIsOpen(false);
+    }
+  };
 
   return (
     <>

@@ -5,6 +5,7 @@ export const StyledToast = styled(Stack)`
   position: fixed;
   top: 10%;
   right: 10px;
+  z-index: 99;
   transform: translate(0, -20%);
   @media (min-width: 960px) {
     top: 20%;
